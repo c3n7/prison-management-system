@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     # Local
     'users.apps.UsersConfig',
 ]
@@ -56,7 +57,7 @@ ROOT_URLCONF = 'prison_management_system.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -123,3 +124,7 @@ STATIC_URL = '/static/'
 
 # The custom user model
 AUTH_USER_MODEL = 'users.User'
+
+# Redirect to home
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
