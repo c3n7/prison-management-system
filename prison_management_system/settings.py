@@ -40,7 +40,8 @@ INSTALLED_APPS = [
 
     # Local
     'users.apps.UsersConfig',
-    'prisoners.apps.PrisonersConfig'
+    'prisoners.apps.PrisonersConfig',
+    'felonys.apps.FelonysConfig',
 ]
 
 MIDDLEWARE = [
