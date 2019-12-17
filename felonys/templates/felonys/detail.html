@@ -36,8 +36,8 @@
                     <p class="card-text">{{ object.description }}</p>
                     <a href="{% url 'felonys_edit' felony.pk %}" 
                        class="btn btn-success">Update</a>
-                    {% comment %}<a href="{% url 'prisoners_list' %}" {% endcomment %}
-                       {% comment %}class="btn btn-outline-success">All Prisoners</a>{% endcomment %}
+                    <a href="{% url 'felonys_list' felony.prisoner.pk %}" 
+                       class="btn btn-outline-success">All Felonies</a>
                 </div>
             </div>
         </div>

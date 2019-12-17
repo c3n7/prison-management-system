@@ -1,32 +1,32 @@
 {% extends 'base.html' %}
 
-{% block title %}Edit Prisoner{% endblock title %}
+{% block title %}Felonies{% endblock title %}
 
 {% block content %}
 <div class="container">
     <div class="row justify-content-md-center">
         <div class="col-sm-8">
-            <h1>Prisoners</h1>
-            <p>Click on a prisoner's ID Number so as to update his/her
-            details or add a felony to him/her</p>
+            <h1>Felonies</h1>
             <table class="table table-bordered table-striped table-hover">
                 <thead class="thead-dark">
                     <tr>
-                        <th scope="col">Id Number</th>
-                        <th scope="col">First Name</th>
-                        <th scope="col">Last Name</th>
+                        <th scope="col">Prisoner</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Start Date</th>
+                        <th scope="col">End Date</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {% for prisoner in object_list %}
+                    {% for felony in object_list %}
                     <tr>
                         <td>
-                            <a href="{% url 'prisoners_detail' prisoner.id %}">
-                                {{ prisoner.id_number }}
+                            <a href="{% url 'felonys_detail' felony.id %}">
+                                {{ felony.prisoner }}
                             </a>
                         </td>
-                        <td>{{ prisoner.first_name }}</td>
-                        <td>{{ prisoner.last_name }}</td>
+                        <td>{{ felony.start_date }}</td>
+                        <td>{{ felony.title }}</td>
+                        <td>{{ felony.end_date }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>

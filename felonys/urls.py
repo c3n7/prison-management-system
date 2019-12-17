@@ -17,7 +17,7 @@ urlpatterns = [
     path('new/<int:prisoner_pk>/',
          FelonysCreateView.as_view(),
          name='felonys_new'),
-    path('',
+    path('list/<int:prisoner_pk>',
          FelonysListView.as_view(),
          name='felonys_list'),
 ]

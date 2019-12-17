@@ -5,7 +5,7 @@
 {% block content %}
 <div class="container">
     <div class="row justify-content-md-center">
-        <div class="col-sm-4">
+        <div class="col-sm-5">
             <h1 class="text-center">Prisoner Details</h1>
             <div class="card border-success mb-3 text-center">
                 <div class="card-header">{{ object.id_number }}</div>
@@ -18,10 +18,14 @@
                     <li class="list-group-item"><b>Id Number: </b>{{ object.id_number }}</li>
                 </ul>
                 <div class="card-body">
+                    <div class="btn-group" role="group" aria-label="CRUD Buttons">
                     <a href="{% url 'prisoners_edit' prisoner.pk %}" 
                        class="btn btn-success">Update</a>
                     <a href="{% url 'felonys_new' prisoner.pk %}" 
-                       class="btn btn-success">Add Felony</a>
+                       class="btn btn-success">+ Add Felony</a>
+                    <a href="{% url 'felonys_list' prisoner.pk %}" 
+                       class="btn btn-success">All Felonies</a>
+                    </div>
                 </div>
                 <div class="card-footer">
                     <a href="{% url 'prisoners_list' %}" 
