@@ -40,8 +40,9 @@ INSTALLED_APPS = [
 
     # 3rd Party
     'crispy_forms',
-    # Local
+    'bootstrap_datepicker_plus',
 
+    # Local
     'users.apps.UsersConfig',
     'prisoners.apps.PrisonersConfig',
     'felonys.apps.FelonysConfig',

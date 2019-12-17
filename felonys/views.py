@@ -2,6 +2,8 @@ from django.shortcuts import get_object_or_404
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView
 
+from bootstrap_datepicker_plus import DatePickerInput
+
 from .models import Felony
 from prisoners.models import Prisoner
 
@@ -38,3 +40,13 @@ class FelonysCreateView(CreateView):
         initial = super(FelonysCreateView, self).get_initial()
         initial['prisoner'] = self.prisoner
         return initial
+
+    def get_form(self):
+        """
+        Overridden to change the DateFields from text boxes to
+        DatePicker widgets
+        """
+        form = super(FelonysCreateView, self).get_form()
+        form.fields['start_date'].widget = DatePickerInput().start_of('duration')
+        form.fields['end_date'].widget = DatePickerInput().end_of('duration')
+        return form

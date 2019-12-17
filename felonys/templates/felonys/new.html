@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% load crispy_forms_tags %}
 
@@ -11,6 +12,7 @@
             <h1>Add Felony</h1>
             <form method="post">
                 {% csrf_token %}
+                {{ form.media }}
                 {{ form|crispy}}
                 <button class="btn btn-success mt-2" type="submit">Add</button>
             </form>

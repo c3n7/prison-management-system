@@ -20,6 +20,11 @@
                 src="{% static 'external/fontawesome-free-5.11.2-web/js/fontawesome.js' %}">
         </script>
 
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="{% static 'external/jquery-3.4.1.min.js' %}"></script>
+        <script src="{% static 'external/popper.min.js' %}"></script>
+        <script src="{% static 'external/bootstrap/js/bootstrap.min.js' %}"></script>
+
         <title>{% block title %}PMS{% endblock title %}</title>
     </head>
     <body>
@@ -85,12 +90,9 @@
                 </ul>
             </div>
         </nav>
+
         {% block content %}
         {% endblock content %}
 
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="{% static 'external/jquery-3.4.1.min.js' %}"></script>
-        <script src="{% static 'external/popper.min.js' %}"></script>
-        <script src="{% static 'external/bootstrap/js/bootstrap.min.js' %}"></script>
     </body>
 </html>
