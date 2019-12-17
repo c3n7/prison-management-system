@@ -5,6 +5,7 @@ from .models import Prisoner
 
 class PrisonersListView(ListView):
     model = Prisoner
+    ordering = ['id_number', 'first_name', 'last_name']
     template_name = 'prisoners/list.html'
 
 class PrisonersDetailView(DetailView):
