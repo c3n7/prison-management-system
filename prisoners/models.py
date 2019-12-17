@@ -5,7 +5,7 @@ class Prisoner(models.Model):
 
     first_name = models.CharField(verbose_name="Firstname", max_length=50)
     last_name = models.CharField(verbose_name="Lastname", max_length=50)
-    id_number = models.CharField(verbose_name="Id Number", max_length=50)
+    id_number = models.CharField(verbose_name="Id Number", max_length=50, unique=True)
 
     def __str__(self):
         return str(self.id_number)
