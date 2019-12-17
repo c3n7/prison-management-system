@@ -34,8 +34,8 @@
                 </ul>
                 <div class="card-body">
                     <p class="card-text">{{ object.description }}</p>
-                    {% comment %}<a href="{% url 'felonys_edit' felony.pk %}" {% endcomment %}
-                       {% comment %}class="btn btn-success">Update</a>{% endcomment %}
+                    <a href="{% url 'felonys_edit' felony.pk %}" 
+                       class="btn btn-success">Update</a>
                     {% comment %}<a href="{% url 'prisoners_list' %}" {% endcomment %}
                        {% comment %}class="btn btn-outline-success">All Prisoners</a>{% endcomment %}
                 </div>

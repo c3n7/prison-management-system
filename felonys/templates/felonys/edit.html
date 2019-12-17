@@ -2,15 +2,16 @@
 
 {% load crispy_forms_tags %}
 
-{% block title %}Edit Prisoner{% endblock title %}
+{% block title %}Edit Felony{% endblock title %}
 
 {% block content %}
 <div class="container">
     <div class="row justify-content-md-center">
-        <div class="col-sm-5">
-            <h1>Edit Prisoner Details</h1>
+        <div class="col-sm-6">
+            <h1>Edit Felony Details</h1>
             <form method="post">
                 {% csrf_token %}
+                {{ form.media }}
                 {{ form|crispy}}
                 <button class="btn btn-success mt-2" type="submit">Update</button>
             </form>
