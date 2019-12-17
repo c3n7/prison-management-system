@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Edit Prisoner{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-sm-5">
+            <h1>Edit Prisoner Details</h1>
+            <form method="post">
+                {% csrf_token %}
+                {{ form|crispy}}
+                <button class="btn btn-success mt-2" type="submit">Update</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}
