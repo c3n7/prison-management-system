@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'prisoners.apps.PrisonersConfig',
     'felonys.apps.FelonysConfig',
-    'next_of_kins.apps.Next_of_kinsConfig'
+    'next_of_kins.apps.NextOfKinsConfig',
+    'lawyers.apps.LawyersConfig',
 ]
 
 MIDDLEWARE = [
