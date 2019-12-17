@@ -1,27 +1,43 @@
 {% extends 'base.html' %}
 
-{% block title %}Register Prisoner{% endblock title %}
+{% block title %}Felony Description{% endblock title %}
 
 {% block content %}
 <div class="container">
     <div class="row justify-content-md-center">
-        <div class="col-sm-4">
-            <h1 class="text-center">Prisoner Details</h1>
+        <div class="col-sm-6">
+            <h1 class="text-center">Felony Description</h1>
             <div class="card border-success mb-3 text-center">
-                <div class="card-header">{{ object.id_number }}</div>
+                <div class="card-header">{{ object.prisoner }}</div>
                 <div class="card-body text-dark">
-                    <h5 class="card-title">{{ object.first_name }}'s Details</h5>
+                    <h5 class="card-title">{{ object.title }}</h5>
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><b>First Name: </b>{{ object.first_name }}</li>
-                    <li class="list-group-item"><b>Last Name: </b>{{ object.last_name }}</li>
-                    <li class="list-group-item"><b>Id Number: </b>{{ object.id_number }}</li>
+                    <li class="list-group-item">
+                        <b>First Name: </b>{{ object.prisoner.first_name }}
+                    </li>
+                    <li class="list-group-item">
+                        <b>Last Name: </b>{{ object.prisoner.last_name }}
+                    </li>
+                    <li class="list-group-item">
+                        <b>Id Number: </b>{{ object.prisoner.id_number }}
+                    </li>
+                    <li class="list-group-item">
+                        <b>Start Date: </b>{{ object.start_date }}
+                    </li>
+                    <li class="list-group-item">
+                        <b>End Date: </b>{{ object.end_date }}
+                    </li>
+                    <li class="list-group-item">
+                        <b>Fine Charged: </b>Kshs. {{ object.fine_charged }}
+                    </li>
                 </ul>
                 <div class="card-body">
-                    <a href="{% url 'prisoners_edit' prisoner.pk %}" 
-                       class="btn btn-success">Update</a>
-                    <a href="{% url 'prisoners_list' %}" 
-                       class="btn btn-outline-success">All Prisoners</a>
+                    <p class="card-text">{{ object.description }}</p>
+                    {% comment %}<a href="{% url 'felonys_edit' felony.pk %}" {% endcomment %}
+                       {% comment %}class="btn btn-success">Update</a>{% endcomment %}
+                    {% comment %}<a href="{% url 'prisoners_list' %}" {% endcomment %}
+                       {% comment %}class="btn btn-outline-success">All Prisoners</a>{% endcomment %}
                 </div>
             </div>
         </div>
