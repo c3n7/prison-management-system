@@ -11,4 +11,4 @@ class Prisoner(models.Model):
         return str(self.id_number)
 
     def get_absolute_url(self):
-        return reverse('prisoner_detail', args=[str(self.id)])
+        return reverse('prisoners_detail', args=[str(self.id)])

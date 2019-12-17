@@ -15,7 +15,7 @@ urlpatterns = [
          PrisonersDetailView.as_view(),
          name='prisoners_detail'),
     path('new/',
-         PrisonersCreateView,
+         PrisonersCreateView.as_view(),
          name='prisoners_new'),
     path('',
          PrisonersListView.as_view(),

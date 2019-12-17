@@ -13,10 +13,10 @@ class PrisonersDetailView(DetailView):
 
 class PrisonersUpdateView(UpdateView):
     model = Prisoner
-    fields = ('first_name', 'last_name', 'id_number')
+    fields = ('id_number', 'first_name', 'last_name')
     template_name = 'prisoners/edit.html'
 
 class PrisonersCreateView(CreateView):
     model = Prisoner
-    fields = ('first_name', 'last_name', 'id_number')
+    fields = ('id_number', 'first_name', 'last_name')
     template_name = 'prisoners/new.html'

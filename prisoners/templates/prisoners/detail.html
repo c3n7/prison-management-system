@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Register Prisoner{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-sm-4">
+            <h1 class="text-center">Prisoner Details</h1>
+            <div class="card border-success mb-3 text-center">
+                <div class="card-header">{{ object.id_number }}</div>
+                <div class="card-body text-dark">
+                    <h5 class="card-title">{{ object.first_name }}'s Details</h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><b>First Name: </b>{{ object.first_name }}</li>
+                    <li class="list-group-item"><b>Last Name: </b>{{ object.last_name }}</li>
+                    <li class="list-group-item"><b>Id Number: </b>{{ object.id_number }}</li>
+                </ul>
+                <div class="card-body">
+                    <a href="{% url 'prisoners_edit' prisoner.pk %}" 
+                       class="btn btn-success">Update</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
