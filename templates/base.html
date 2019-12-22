@@ -26,6 +26,13 @@
         <script src="{% static 'external/bootstrap/js/bootstrap.min.js' %}"></script>
 
         <title>{% block title %}PMS{% endblock title %}</title>
+
+        <style>
+        body{
+    background-color: #7ee8fa;
+    background-image: linear-gradient(315deg, #7ee8fa 0%, #80ff72 74%);
+        }
+        </style>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -93,6 +100,11 @@
 
         {% block content %}
         {% endblock content %}
-
+        <footer class="py-3 bg-dark fixed-bottom">
+            <div class="footer navbar-fixed-bottom">
+              <p class="m-0 text-center text-white">@2019 Kenya Prisons Information Management System</p>
+            </div>
+            <!-- /.container -->
+          </footer>
     </body>
 </html>
