@@ -25,6 +25,7 @@ class KinPrisoner(models.Model):
         Prisoner,
         on_delete=models.CASCADE
     )
+    relationship = models.CharField(max_length=50)
 
     def __str__(self):
         return "{} - {}".format(self.kin, self.prisoner)
