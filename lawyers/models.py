@@ -11,7 +11,7 @@ class Lawyer(models.Model):
     )
 
     def __str__(self):
-        return self.user
+        return "{} <{}>".format(self.user.get_full_name(), self.user.email)
 
     def get_absolute_url(self):
         return reverse('lawyers_detail', args=[str(self.id)])
