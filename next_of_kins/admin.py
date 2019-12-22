@@ -7,7 +7,7 @@ class NextOfKinAdmin(admin.ModelAdmin):
 
 class KinPrisonerAdmin(admin.ModelAdmin):
     model = KinPrisoner
-    list_display = ['kin', 'prisoner',]
+    list_display = ['kin', 'prisoner', 'relationship',]
 
 admin.site.register(NextOfKin, NextOfKinAdmin)
 admin.site.register(KinPrisoner, KinPrisonerAdmin)
