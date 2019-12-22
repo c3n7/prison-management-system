@@ -16,7 +16,7 @@ class Lawyer(models.Model):
     def get_absolute_url(self):
         return reverse('lawyers_detail', args=[str(self.id)])
 
-class LawyerClients(models.Model):
+class LawyerClient(models.Model):
     lawyer = models.ForeignKey(
         Lawyer,
         on_delete=models.CASCADE
