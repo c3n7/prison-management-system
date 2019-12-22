@@ -6,7 +6,7 @@ class LawyerAdmin(admin.ModelAdmin):
     list_display = ['user',]
 
 class LawyerClientAdmin(admin.ModelAdmin):
-    model = Lawyer
+    model = LawyerClient
     list_display = ['lawyer', 'prisoner',]
 
 admin.site.register(Lawyer, LawyerAdmin)
