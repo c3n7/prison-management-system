@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Next of Kin Details{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-sm-5">
+            <h1 class="text-center">Next of Kin Details</h1>
+            <div class="card border-success mb-3 text-center">
+                <div class="card-header">{{ object.user.id_number }}</div>
+                <div class="card-body text-dark">
+                    <h5 class="card-title">{{ object.user.first_name }}'s Details</h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><b>First Name: </b>{{ object.user.first_name }}</li>
+                    <li class="list-group-item"><b>Last Name: </b>{{ object.user.last_name }}</li>
+                    <li class="list-group-item"><b>Id Number: </b>{{ object.user.id_no }}</li>
+                </ul>
+                {% comment %}<div class="card-body">{% endcomment %}
+                    {% comment %}<div class="btn-group" role="group" aria-label="CRUD Buttons">{% endcomment %}
+                    {% comment %}<a href="{% url 'prisoners_edit' prisoner.pk %}" {% endcomment %}
+                       {% comment %}class="btn btn-success">All Clients</a>{% endcomment %}
+                    {% comment %}<a href="{% url 'felonys_new' prisoner.pk %}" {% endcomment %}
+                       {% comment %}class="btn btn-success">+ Add Client</a>{% endcomment %}
+                    {% comment %}</div>{% endcomment %}
+                {% comment %}</div>{% endcomment %}
+                {% comment %}<div class="card-footer">{% endcomment %}
+                    {% comment %}<a href="{% url 'prisoners_list' %}" {% endcomment %}
+                       {% comment %}class="btn btn-outline-success">All Prisoners</a>{% endcomment %}
+                {% comment %}</div>{% endcomment %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
