@@ -4,13 +4,13 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,
-                                                        initial-scale=1, shrink-to-fit=no">
+                                                          initial-scale=1, shrink-to-fit=no">
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="{% static 'external/bootstrap/css/bootstrap.min.css' %}">
 
         <!-- Site CSS -->
         <!--
-        <link rel="stylesheet" href="/static/css/stylesheet.css">
+            <link rel="stylesheet" href="/static/css/stylesheet.css">
         -->
 
         <!-- Font Awesome -->
@@ -28,10 +28,10 @@
         <title>{% block title %}PMS{% endblock title %}</title>
 
         <style>
-        body{
+body{
     background-color: #7ee8fa;
     background-image: linear-gradient(315deg, #7ee8fa 0%, #80ff72 74%);
-        }
+}
         </style>
     </head>
     <body>
@@ -53,9 +53,9 @@
                     {% if request.user.is_superuser %}
                     <li class="nav-item dropdown bg-dark">
                         <a href="#" class="nav-link dropdown-toggle " 
-                           id="navbarDropdown" 
-                           role="button" 
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    id="navbarDropdown" 
+                                    role="button" 
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Prisoners
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -68,12 +68,47 @@
                             </a>
                         </div>
                     </li>
-                    {% endif %}
-                    <li class="nav-item dropleft">
-                        <button class="nav-link btn btn-outline-secondary dropdown-toggle " 
+                    <li class="nav-item dropdown bg-dark">
+                        <a href="#" class="nav-link dropdown-toggle " 
+                                    id="navbarDropdown" 
+                                    role="button" 
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Lawyer Actions
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{% url 'lawyerclients_new' %}">
+                                Add Clients
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'lawyerclients_list' %}">
+                                Clients List
+                            </a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown bg-dark">
+                        <a href="#" 
+                           class="nav-link dropdown-toggle " 
                            id="navbarDropdown" 
                            role="button" 
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Next of Kin Actions
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{% url 'kinprisoners_new' %}">
+                                Add Prisoner Kin
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'kinprisoners_list' %}">
+                                Prisoner Kin List
+                            </a>
+                        </div>
+                    </li>
+                    {% endif %}
+                    <li class="nav-item dropleft">
+                        <button class="nav-link btn btn-outline-secondary dropdown-toggle " 
+                                id="navbarDropdown" 
+                                role="button" 
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             {{ user.last_name }}
                         </button>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -102,9 +137,9 @@
         {% endblock content %}
         <footer class="py-3 bg-dark fixed-bottom">
             <div class="footer navbar-fixed-bottom">
-              <p class="m-0 text-center text-white">@2019 Kenya Prisons Information Management System</p>
+                <p class="m-0 text-center text-white">@2019 Kenya Prisons Information Management System</p>
             </div>
             <!-- /.container -->
-          </footer>
+        </footer>
     </body>
 </html>
