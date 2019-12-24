@@ -30,4 +30,4 @@ class LawyerClient(models.Model):
         return "{} - {}".format(self.lawyer, self.prisoner)
 
     def get_absolute_url(self):
-        return reverse('lawyers_clients_detail', args=[str(self.id)])
+        return reverse('lawyerclients_list')

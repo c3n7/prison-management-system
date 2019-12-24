@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Remove Client{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-sm-5">
+            <h1>Delete</h1>
+            <form action="" method="post">{% csrf_token %}
+                <p>Are you sure you want to delete the client"{{ lawyerclient.prisoner }}"?</p>
+                <button class="btn btn-danger ml-2" type="submit">Confirm</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}
