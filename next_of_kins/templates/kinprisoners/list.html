@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}Prisoners{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-sm-8">
+            <h1>Your Kin Prisoners</h1>
+            <p>Click on a prisoner's ID Number so as to view his/her
+            details</p>
+            <table class="table table-bordered table-striped table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Id Number</th>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for kinprisoner in object_list %}
+                    <tr>
+                        <td>
+                            <a href="{% url 'prisoners_detail' kinprisoner.prisoner.id %}">
+                                {{ kinprisoner.prisoner.id_number }}
+                            </a>
+                        </td>
+                        <td>{{ kinprisoner.prisoner.first_name }}</td>
+                        <td>{{ kinprisoner.prisoner.last_name }}</td>
+                        <td class="text-center">
+                            <a class="btn btn-outline-danger btn-sm" 
+                               href="{% url 'kinprisoners_delete' kinprisoner.pk%}">
+                                Delete
+                            </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -31,5 +31,5 @@ class KinPrisoner(models.Model):
         return "{} - {}".format(self.kin, self.prisoner)
 
     def get_absolute_url(self):
-        return reverse('kinprisoner_detail', args=[str(self.id)])
+        return reverse('kinprisoners_list')
 
