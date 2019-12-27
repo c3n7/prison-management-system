@@ -19,17 +19,21 @@
                 </ul>
                 <div class="card-body">
                     <div class="btn-group" role="group" aria-label="CRUD Buttons">
-                    <a href="{% url 'prisoners_edit' prisoner.pk %}" 
-                       class="btn btn-success">Update</a>
-                    <a href="{% url 'felonys_new' prisoner.pk %}" 
-                       class="btn btn-success">+ Add Felony</a>
-                    <a href="{% url 'felonys_list' prisoner.pk %}" 
-                       class="btn btn-success">All Felonies</a>
+                        {% if request.user.is_superuser %}
+                        <a href="{% url 'prisoners_edit' prisoner.pk %}" 
+                           class="btn btn-success">Update</a>
+                        <a href="{% url 'felonys_new' prisoner.pk %}" 
+                           class="btn btn-success">+ Add Felony</a>
+                        {% endif %}
+                        <a href="{% url 'felonys_list' prisoner.pk %}" 
+                           class="btn btn-success">All Felonies</a>
                     </div>
                 </div>
                 <div class="card-footer">
+                    {% if request.user.is_superuser %}
                     <a href="{% url 'prisoners_list' %}" 
                        class="btn btn-outline-success">All Prisoners</a>
+                    {% endif %}
                 </div>
             </div>
         </div>
