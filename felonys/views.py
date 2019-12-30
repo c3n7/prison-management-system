@@ -11,10 +11,11 @@ from bootstrap_datepicker_plus import DatePickerInput
 from .models import Felony
 from prisoners.models import Prisoner
 
-class FelonysListView(ListView):
+class FelonysListView(LoginRequiredMixin, ListView):
     model = Felony
     ordering = ['prisoner', 'title']
     template_name = 'felonys/list.html'
+    login_url = 'login'
 
     def dispatch(self, request, *args, **kwargs):
         """
@@ -30,9 +31,10 @@ class FelonysListView(ListView):
         return Felony.objects.filter(
             prisoner=self.prisoner).order_by('title')
 
-class FelonysDetailView(DetailView):
+class FelonysDetailView(LoginRequiredMixin, DetailView):
     model = Felony
     template_name = 'felonys/detail.html'
+    login_url = 'login'
 
 class FelonysUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Felony
