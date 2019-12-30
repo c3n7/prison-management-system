@@ -1,3 +1,7 @@
+from django.contrib.auth.mixins import (
+    LoginRequiredMixin,
+    UserPassesTestMixin
+)
 from django.shortcuts import get_object_or_404
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView
@@ -30,15 +34,23 @@ class FelonysDetailView(DetailView):
     model = Felony
     template_name = 'felonys/detail.html'
 
-class FelonysUpdateView(UpdateView):
+class FelonysUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Felony
     fields = ('title', 'description', 'start_date', 'end_date', 'fine_charged')
     template_name = 'felonys/edit.html'
+    login_url = 'login'
 
-class FelonysCreateView(CreateView):
+    def test_func(self):
+        return self.request.user.is_superuser
+
+class FelonysCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
     model = Felony
     fields = ('prisoner', 'title', 'description', 'start_date', 'end_date', 'fine_charged')
     template_name = 'felonys/new.html'
+    login_url = 'login'
+
+    def test_func(self):
+        return self.request.user.is_superuser
 
     def dispatch(self, request, *args, **kwargs):
         """
