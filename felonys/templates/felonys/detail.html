@@ -34,8 +34,12 @@
                 </ul>
                 <div class="card-body">
                     <p class="card-text">{{ object.description }}</p>
+                </div>
+                <div class="card-footer">
+                    {% if request.user.is_superuser %}
                     <a href="{% url 'felonys_edit' felony.pk %}" 
                        class="btn btn-success">Update</a>
+                    {% endif %}
                     <a href="{% url 'felonys_list' felony.prisoner.pk %}" 
                        class="btn btn-outline-success">All Felonies</a>
                 </div>
