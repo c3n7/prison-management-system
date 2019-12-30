@@ -63,6 +63,14 @@ class LawyerClientListView(LoginRequiredMixin, UserPassesTestMixin, ListView):
         is_lawyer = Lawyer.objects.filter(user=self.request.user).exists()
         return self.request.user.is_superuser or is_lawyer
 
+    def get_queryset(self):
+        """
+        Return only the clients for the current lawyer
+        """
+        lawyer = Lawyer.objects.filter(user=self.request.user).first()
+        return LawyerClient.objects.filter(
+            lawyer=lawyer)
+
 class LawyerClientDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = LawyerClient
     template_name = 'lawyerclients/delete.html'
